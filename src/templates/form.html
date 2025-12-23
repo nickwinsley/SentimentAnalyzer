@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sentiment Analyzer</title>
+</head>
+
+<body>
+
+	<h1>Enter a message to predict sentiment:</h1>
+
+	<form action="{{ url_for('process') }}" method="POST" target="popupWindow"
+		onsubmit="window.open('', 'popupWindow', 'width=600,height=400');">
+		<label for="user_string">Your Message:</label>
+		<input type="text" id="user_string" name="user_string"><br>
+		<input type="submit" value = "Submit">
+	</form>
+	
+	<div id="results-container">
+		<h3>Previous submissions:</h3>
+		<ul>
+			{% for key, value in results.items() %}
+				<li>
+					<p>Message:<strong>{{ key }}</strong></p>
+					<p>Sentiment:<strong>{{ value }}</strong></p>
+					
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+
+</body>
+</html>

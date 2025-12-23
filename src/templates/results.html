@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset = "UTF-8">
+	<title>Results</title>
+</head>
+
+<body>
+	<h1>Results</h1>
+	<p>Message: <strong>{{ original }}</strong></p>
+	<p>Sentiment Results: <strong>{{ result }}</strong></p>
+
+	<button onclick="closeAndRedirect()">Close</button>
+
+	<script>
+	function closeAndRedirect() {
+    		if (window.opener && !window.opener.closed) {
+        		// Redirect the main window to any route, e.g., home
+        		window.opener.location.href = "{{ url_for('setUp') }}"; 
+    		}
+    		window.close();
+	}
+	</script>
+</body>
+</html>
