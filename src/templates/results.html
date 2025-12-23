@@ -15,7 +15,6 @@
 	<script>
 	function closeAndRedirect() {
     		if (window.opener && !window.opener.closed) {
-        		// Redirect the main window to any route, e.g., home
         		window.opener.location.href = "{{ url_for('setUp') }}"; 
     		}
     		window.close();
