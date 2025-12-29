@@ -19,10 +19,11 @@
 	<div id="results-container">
 		<h3>Previous submissions:</h3>
 		<ul>
-			{% for key, value in results.items() %}
+			{% for item in result %}
 				<li>
-					<p>Message:<strong>{{ key }}</strong></p>
-					<p>Sentiment:<strong>{{ value }}</strong></p>
+					<p>Message:<strong>{{ item.message }}</strong></p>
+					<p>Sentiment:<strong>{{ item.sentiment }}</strong></p>
+					<p>Timestamp:<strong>{{ item.timestamp }}</strong></p>
 					
 				</li>
 			{% endfor %}
